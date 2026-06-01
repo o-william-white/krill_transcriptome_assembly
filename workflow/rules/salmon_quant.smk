@@ -1,10 +1,10 @@
-rule salmon_quant_reads:
+rule salmon_quant:
     input:
         # If you have multiple fastq files for a single sample (e.g. technical replicates)
         # use a list for r1 and r2.
         r1="results/bbnorm/normalised_fwd.fastq",
         r2="results/bbnorm/normalised_rev.fastq",
-        index="result/salmon_index/",
+        index="results/salmon_index/",
     output:
         quant="results/salmon/quant.sf",
         lib="results/salmon/lib_format_counts.json",
