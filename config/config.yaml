@@ -1,0 +1,9 @@
+
+# path to sample sheet csv with columns for ID,forward,reverse
+samples: sample_list_Ecry.csv
+
+# path to signalp executable
+signalp_env: "signalp6"
+
+# path to tmhmm executable
+tmhmm_path: /home/owhite/apps/tmhmm-2.0d/bin/tmhmm

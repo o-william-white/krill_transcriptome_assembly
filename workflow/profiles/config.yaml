@@ -1,0 +1,88 @@
+executor: slurm
+jobs: 40
+use-conda: true
+use-apptainer: true
+apptainer-args: "-B /mnt/shared/scratch --pwd /mnt/shared/scratch/owhite/private/krill_transcriptome_assembly"
+rerun-incomplete: true
+printshellcmds: true 
+
+default-resources:
+    slurm_account: cropdiv-acc
+    slurm_partition: "short"
+    mem: "4GB"
+    runtime: "6h"
+    cpus_per_task: 8
+
+set-threads:
+    bbnorm: 32
+    trinity: 32
+    bwa_mem: 32
+    busco: 16
+    transrate: 16
+    diamond_blastp: 32
+    pfam: 16
+    diamond_blastx: 32
+    infernal: 16
+    signalp6: 16
+    emapper: 16
+
+set-resources:
+    sortmerna:
+        mem: "12G"
+    cat_reads:
+        mem: "100G"
+    bbnorm:
+        mem: "500G"
+        runtime: "168h"
+        slurm_partition: "himem"
+        cpus_per_task: 32
+    trinity:
+        mem: "1000G"
+        runtime: "168h"
+        slurm_partition: "himem"
+        cpus_per_task: 32
+    bwa_mem:
+        mem: "100G"
+        cpus_per_task: 32
+    busco:
+        mem: "100G"
+        cpus_per_task: 16
+    diamond_blastp:
+        mem: "100G"
+        runtime: "168h"
+        slurm_partition: "himem"
+        cpus_per_task: 32
+    pfam:
+        mem: "10G"
+        runtime: "168h"
+        slurm_partition: "long"
+        cpus_per_task: 16
+    diamond_blastx:
+        mem: "100G"
+        runtime: "168h"
+        slurm_partition: "himem"
+        cpus_per_task: 32
+    transdecoder_predict:
+        mem: "256G"
+        runtime: "24h"
+        slurm_partition: "himem"
+    tmhmm:
+        mem: "100G"
+        runtime: "24h"
+        slurm_partition: "medium"
+    infernal:
+        mem: "10G"
+        runtime: "64h"
+        slurm_partition: "long"
+        cpus_per_task: 16
+    signalp6:
+        mem: "50G"
+        runtime: "168h"
+        slurm_partition: "long"
+        cpus_per_task: 16
+    emapper:
+        mem: "50G"
+        runtime: "168h"
+        slurm_partition: "long"
+        cpus_per_task: 16
+
