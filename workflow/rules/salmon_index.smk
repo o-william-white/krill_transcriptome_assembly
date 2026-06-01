@@ -17,6 +17,7 @@ rule salmon_index:
             "sshash.bin",
             "versionInfo.json",
         ),
+        directory("results/salmon_index"),
     log:
         "logs/salmon/salmon_index.log",
     params:
