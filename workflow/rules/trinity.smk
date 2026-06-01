@@ -4,12 +4,14 @@ rule trinity:
         rev="results/bbnorm/normalised_rev.fastq",
     output:
         directory("results/trinity"),
-        fas="results/trinity/trinity.Trinity.fasta",
-        map="results/trinity/trinity.Trinity.fasta.gene_trans_map",
+        fas=TRINITY_FASTA,
+        map=TRINITY_MAP,
     log:
         "logs/trinity.log",
     container:
         "docker://trinityrnaseq/trinityrnaseq:latest"
+    params:
+        prefix=config["assembly_prefix"],
     shell:
         """
         Trinity \
@@ -21,5 +23,5 @@ rule trinity:
             --no_normalize_reads \
             --full_cleanup \
             --bflyHeapSpaceMax 40G \
-            --output results/trinity/trinity 2>{log}
+            --output results/trinity/{params.prefix} 2>{log}
         """

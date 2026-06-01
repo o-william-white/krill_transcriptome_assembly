@@ -1,6 +1,6 @@
 rule busco:
     input:
-        "results/trinity/trinity.Trinity.fasta",
+        TRINITY_FASTA,
     output:
         short_json="results/busco/short_summary.json",
         short_txt="results/busco/short_summary.txt",

@@ -1,6 +1,6 @@
 rule diamond_blastx:
     input:
-        fname_fastq="results/trinity/trinity.Trinity.fasta",
+        fname_fastq=TRINITY_FASTA,
         fname_db="resources/swissprot_db/uniprot_sprot.dmnd",
     output:
         fname="results/diamond/blastx.txt",

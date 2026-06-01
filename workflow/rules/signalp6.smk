@@ -1,6 +1,6 @@
 rule signalp6:
     input:
-        "results/transdecoder/trinity.Trinity.fasta.transdecoder.pep",
+        TRANSDECODER_PEP,
     output:
         dir=directory("results/signalp6"),
         gff="results/signalp6/output.gff3",

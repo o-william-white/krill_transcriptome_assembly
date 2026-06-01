@@ -4,10 +4,10 @@ INFERNAL_PARTS = [f"{i:03d}" for i in range(1, NPARTS + 1)]
 
 rule seqkit_split2_part:
     input:
-        fasta="results/trinity/trinity.Trinity.fasta",
+        fasta=TRINITY_FASTA,
     output:
         fasta=expand(
-            "results/seqkit_split/trinity.Trinity.part_{part}.fasta",
+            SEQKIT_SPLIT_FASTA,
             part=INFERNAL_PARTS,
         ),
     log:
@@ -30,7 +30,7 @@ rule infernal:
         ),
         rfam="resources/rfam_db/Rfam.cm",
         clanin="resources/rfam_db/Rfam.clanin",
-        fasta="results/seqkit_split/trinity.Trinity.part_{part}.fasta",
+        fasta=SEQKIT_SPLIT_FASTA,
     output:
         tbl="results/infernal/infernal_tblout_{part}.txt",
     log:
@@ -38,7 +38,7 @@ rule infernal:
     conda:
         "../envs/infernal.yaml"
     params:
-        full_fasta="results/trinity/trinity.Trinity.fasta",
+        full_fasta=TRINITY_FASTA,
     shell:
         """
         Z=$(ls -l {params.full_fasta} | awk '{{printf "%d", ($5/1e6)+0.5}}') \

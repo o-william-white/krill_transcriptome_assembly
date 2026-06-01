@@ -1,6 +1,6 @@
 rule tmhmm:
     input:
-        pep="results/transdecoder/trinity.Trinity.fasta.transdecoder.pep",
+        pep=TRANSDECODER_PEP,
     output:
         tmhmm_out="results/tmhmm/tmhmm.txt",
     log:

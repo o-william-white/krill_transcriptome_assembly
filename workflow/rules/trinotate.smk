@@ -17,9 +17,9 @@ rule trinotate_init:
     """Load transcripts and ORFs into the database."""
     input:
         db="results/trinotate/myTrinotate.sqlite",
-        fasta="results/trinity/trinity.Trinity.fasta",
-        gene_map="results/trinity/trinity.Trinity.fasta.gene_trans_map",
-        pep="results/transdecoder/trinity.Trinity.fasta.transdecoder.pep",
+        fasta=TRINITY_FASTA,
+        gene_map=TRINITY_MAP,
+        pep=TRANSDECODER_PEP,
     output:
         temp("__init.ok"),
     log:

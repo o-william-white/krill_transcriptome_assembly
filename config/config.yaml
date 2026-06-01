@@ -1,3 +1,5 @@
+# assembly prefix
+assembly_prefix: "Ecry"
 
 # path to sample sheet csv with columns for ID,forward,reverse
 samples: sample_list_Ecry.csv

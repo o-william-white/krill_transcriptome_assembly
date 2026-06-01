@@ -1,7 +1,7 @@
 rule transdecoder_longorfs:
     input:
-        fasta="results/trinity/trinity.Trinity.fasta",
-        map="results/trinity/trinity.Trinity.fasta.gene_trans_map",
+        fasta=TRINITY_FASTA,
+        map=TRINITY_MAP,
     output:
         "results/transdecoder/longest_orfs.cds",
         "results/transdecoder/longest_orfs.gff3",

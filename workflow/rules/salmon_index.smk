@@ -1,6 +1,6 @@
 rule salmon_index:
     input:
-        sequences="results/trinity/trinity.Trinity.fasta",
+        sequences=TRINITY_FASTA,
     output:
         multiext(
             "results/salmon_index/",

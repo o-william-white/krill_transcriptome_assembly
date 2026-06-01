@@ -3,7 +3,7 @@ rule emapper:
         "resources/eggnog_db/eggnog.db",
         "resources/eggnog_db/eggnog_proteins.dmnd",
         "resources/eggnog_db/eggnog.taxa.db",
-        pep="results/transdecoder/trinity.Trinity.fasta.transdecoder.pep",
+        pep=TRANSDECODER_PEP,
     output:
         "results/eggnog/trinity.emapper.annotations",
     log:
