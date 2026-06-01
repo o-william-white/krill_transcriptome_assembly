@@ -3,9 +3,9 @@ rule emapper:
         "resources/eggnog_db/eggnog.db",
         "resources/eggnog_db/eggnog_proteins.dmnd",
         "resources/eggnog_db/eggnog.taxa.db",
-        pep = "results/transdecoder/trinity.Trinity.fasta.transdecoder.pep",
+        pep="results/transdecoder/trinity.Trinity.fasta.transdecoder.pep",
     output:
-        "results/eggnog/trinity.emapper.annotations"
+        "results/eggnog/trinity.emapper.annotations",
     log:
         "logs/emapper.log",
     conda:
@@ -20,5 +20,5 @@ rule emapper:
             -o trinity \
             --cpu {threads} \
             --override \
-            --data_dir resources/eggnog_db &> {log}
+            --data_dir resources/eggnog_db &>{log}
         """

@@ -19,5 +19,5 @@ rule bbnorm:
             target=50 \
             min=1 \
             threads={threads} \
-            2> {log}
+            2>{log}
         """

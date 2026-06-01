@@ -7,6 +7,6 @@ rule swissprot_db:
         "../envs/conda_env.yaml"
     shell:
         """
-        wget --wait 10 --random-wait -P resources/swissprot_db https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz &> {log}
-        gunzip resources/swissprot_db/uniprot_sprot.fasta.gz &>> {log}
+        wget --wait 10 --random-wait -P resources/swissprot_db https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz &>{log}
+        gunzip resources/swissprot_db/uniprot_sprot.fasta.gz &>>{log}
         """

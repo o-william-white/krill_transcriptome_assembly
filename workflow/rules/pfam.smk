@@ -6,11 +6,11 @@ rule pfam:
     output:
         "results/pfam/pfam.txt",
     log:
-        "logs/pfam.log"
-    threads: 16
+        "logs/pfam.log",
     conda:
         "../envs/hmmer.yaml"
+    threads: 16
     shell:
         """
-        hmmsearch --cpu {threads} --domtblout {output} {input.hmm} {input.fasta} > /dev/null 2> {log}
+        hmmsearch --cpu {threads} --domtblout {output} {input.hmm} {input.fasta} >/dev/null 2>{log}
         """

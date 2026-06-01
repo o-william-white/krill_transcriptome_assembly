@@ -7,9 +7,9 @@ rule transdecoder_predict:
     output:
         "results/transdecoder/trinity.Trinity.fasta.transdecoder.cds",
         "results/transdecoder/trinity.Trinity.fasta.transdecoder.pep",
-        "results/transdecoder/trinity.Trinity.fasta.transdecoder.gff3"
+        "results/transdecoder/trinity.Trinity.fasta.transdecoder.gff3",
     log:
-        "logs/transdecoder_predict.log"
+        "logs/transdecoder_predict.log",
     conda:
         "../envs/transdecoder.yaml"
     shell:
@@ -21,6 +21,6 @@ rule transdecoder_predict:
             -t {input.fasta} \
             --retain_pfam_hits {input.pfam} \
             --retain_blastp_hits {input.blastp} \
-            -O results/transdecoder/ 2> {log} && \
-        mv trinity.Trinity.fasta.transdecoder.*  results/transdecoder/
+            -O results/transdecoder/ 2>{log} \
+            && mv trinity.Trinity.fasta.transdecoder.* results/transdecoder/
         """

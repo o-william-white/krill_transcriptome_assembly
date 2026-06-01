@@ -30,7 +30,8 @@ include: "rules/eggnog_db.smk"
 include: "rules/emapper.smk"
 include: "rules/trinotate.smk"
 
+
 rule all:
     input:
         "results/multiqc.html",
-        "results/trinotate/trinotate_report.tsv"
+        "results/trinotate/trinotate_report.tsv",

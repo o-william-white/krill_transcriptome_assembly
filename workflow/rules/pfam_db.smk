@@ -7,6 +7,6 @@ rule pfam_db:
         "../envs/conda_env.yaml"
     shell:
         """
-        wget --wait 10 --random-wait -P resources/pfam_db https://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/Pfam-A.hmm.gz &> {log}
-        gunzip resources/pfam_db/Pfam-A.hmm.gz &>> {log}
+        wget --wait 10 --random-wait -P resources/pfam_db https://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/Pfam-A.hmm.gz &>{log}
+        gunzip resources/pfam_db/Pfam-A.hmm.gz &>>{log}
         """

@@ -7,7 +7,7 @@ rule transdecoder_longorfs:
         "results/transdecoder/longest_orfs.gff3",
         "results/transdecoder/longest_orfs.pep",
     log:
-        "logs/transdecoder_longorfs.log"
+        "logs/transdecoder_longorfs.log",
     conda:
         "../envs/transdecoder.yaml"
     shell:
@@ -15,5 +15,5 @@ rule transdecoder_longorfs:
         TransDecoder.LongOrfs \
             -t {input.fasta} \
             --gene_trans_map {input.map} \
-            -O results/transdecoder/ 2> {log}
+            -O results/transdecoder/ 2>{log}
         """

@@ -13,13 +13,13 @@ rule trinity:
     shell:
         """
         Trinity \
-           --max_memory 900G \
-           --seqType fq \
-           --left {input.fwd} \
-           --right {input.rev} \
-           --CPU {threads} \
-           --no_normalize_reads \
-           --full_cleanup \
-           --bflyHeapSpaceMax 40G \
-           --output results/trinity/trinity 2> {log}
+            --max_memory 900G \
+            --seqType fq \
+            --left {input.fwd} \
+            --right {input.rev} \
+            --CPU {threads} \
+            --no_normalize_reads \
+            --full_cleanup \
+            --bflyHeapSpaceMax 40G \
+            --output results/trinity/trinity 2>{log}
         """

@@ -2,14 +2,14 @@ rule signalp6:
     input:
         "results/transdecoder/trinity.Trinity.fasta.transdecoder.pep",
     output:
-        dir = directory("results/signalp6"),
-        gff = "results/signalp6/output.gff3"
-    params:
-        signalp_env = config["signalp_env"]
+        dir=directory("results/signalp6"),
+        gff="results/signalp6/output.gff3",
+    log:
+        "logs/signalp6.log",
     conda:
         "../envs/conda_env.yaml"
-    log:
-        "logs/signalp6.log"
+    params:
+        signalp_env=config["signalp_env"],
     shell:
         """
         conda run -n {params.signalp_env} signalp6 \
@@ -20,5 +20,5 @@ rule signalp6:
             --mode fast \
             --bsize 1000 \
             --write_procs {threads} \
-            --torch_num_threads {threads} 2> {log}
+            --torch_num_threads {threads} 2>{log}
         """

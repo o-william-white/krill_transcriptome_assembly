@@ -12,5 +12,5 @@ rule cat_fwd_reads:
         "../envs/conda_env.yaml"
     shell:
         """
-        cat {input} 1> {output} 2> {log}
+        cat {input} 1>{output} 2>{log}
         """

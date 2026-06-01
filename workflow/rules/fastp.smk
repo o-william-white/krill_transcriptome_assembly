@@ -7,11 +7,11 @@ rule fastp:
         unpaired2="results/fastp/{sample}_U2.fastq",
         failed="results/fastp/{sample}_failed.fastq",
         html="results/fastp/{sample}_fastp.html",
-        json="results/fastp/{sample}_fastp.json"
+        json="results/fastp/{sample}_fastp.json",
     log:
-        "logs/fastp/{sample}.log"
+        "logs/fastp/{sample}.log",
+    threads: 8
     params:
         adapters="--adapter_sequence ACGGCTAGCTA --adapter_sequence_r2 AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC --trim_poly_g --trim_poly_x",
-    threads: 8
     wrapper:
         "v7.1.0/bio/fastp"

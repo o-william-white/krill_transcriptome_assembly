@@ -10,10 +10,10 @@ rule salmon_quant_reads:
         lib="results/salmon/lib_format_counts.json",
     log:
         "logs/salmon/salmon_quant.log",
+    threads: 2
     params:
         # optional parameters
         libtype="A",
         extra="",
-    threads: 2
     wrapper:
         "v9.4.0/bio/salmon/quant"
