@@ -1,5 +1,9 @@
 rule trinotate_create_schema:
     """Create SQLite schema directly, bypassing --create and all database downloads."""
+    input:
+        fasta=TRINITY_FASTA,
+        gene_map=TRINITY_MAP,
+        pep=TRANSDECODER_PEP,
     output:
         db="results/trinotate/myTrinotate.sqlite",
     log:
@@ -16,10 +20,10 @@ rule trinotate_create_schema:
 rule trinotate_init:
     """Load transcripts and ORFs into the database."""
     input:
-        db="results/trinotate/myTrinotate.sqlite",
         fasta=TRINITY_FASTA,
         gene_map=TRINITY_MAP,
         pep=TRANSDECODER_PEP,
+        db="results/trinotate/myTrinotate.sqlite",
     output:
         temp("__init.ok"),
     log:
