@@ -7,7 +7,7 @@
 
 source activate rnaseq_transcriptome_env
 
-snakemake --profile workflow/profiles/ 
+snakemake --profile workflow/profiles/ --rerun-incomplete 
 
 echo Complete!
 

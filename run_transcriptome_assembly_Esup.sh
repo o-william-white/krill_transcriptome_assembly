@@ -7,6 +7,6 @@
 
 source activate rnaseq_transcriptome_env
 
-snakemake --profile workflow/profiles/ --config assembly_prefix=Esup samples=sample_list_Esup.csv
+snakemake --profile workflow/profiles/ --config assembly_prefix=Esup samples=sample_list_Esup.csv --rerun-incomplete
 
 echo Complete!
