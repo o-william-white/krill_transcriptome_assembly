@@ -23,5 +23,5 @@ rule trinity:
             --no_normalize_reads \
             --full_cleanup \
             --bflyHeapSpaceMax 40G \
-            --output results/trinity/{params.prefix} 2>{log}
+            --output results/trinity/{params.prefix}_trinity.fasta 2>{log}
         """
