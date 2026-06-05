@@ -14,3 +14,6 @@ Build rule graph
 ```bash 
 snakemake --profile workflow/profiles/ --rulegraph | dot -Tsvg > rulegraph.svg
 ```
+
+To do
+- Write sormerna idx output to results dir rather than working dir.
