@@ -5,7 +5,7 @@ rule cat_fwd_reads:
             sample=sample_data.index.tolist(),
         ),
     output:
-        "results/cat_reads/nonRNA_reads_fwd.fastq",
+        temp("results/cat_reads/nonRNA_reads_fwd.fastq"),
     log:
         "logs/cat_fwd_reads.log",
     conda:

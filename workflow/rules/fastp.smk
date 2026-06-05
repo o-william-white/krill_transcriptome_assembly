@@ -2,10 +2,12 @@ rule fastp:
     input:
         sample=get_fastq,
     output:
-        trimmed=["results/fastp/{sample}_R1.fastq", "results/fastp/{sample}_R2.fastq"],
-        unpaired1="results/fastp/{sample}_U1.fastq",
-        unpaired2="results/fastp/{sample}_U2.fastq",
-        failed="results/fastp/{sample}_failed.fastq",
+        trimmed=temp(
+            ["results/fastp/{sample}_R1.fastq", "results/fastp/{sample}_R2.fastq"]
+        ),
+        unpaired1=temp("results/fastp/{sample}_U1.fastq"),
+        unpaired2=temp("results/fastp/{sample}_U2.fastq"),
+        failed=temp("results/fastp/{sample}_failed.fastq"),
         html="results/fastp/{sample}_fastp.html",
         json="results/fastp/{sample}_fastp.json",
     log:

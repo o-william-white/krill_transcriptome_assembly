@@ -22,5 +22,5 @@ rule transdecoder_predict:
             --retain_pfam_hits {input.pfam} \
             --retain_blastp_hits {input.blastp} \
             -O results/transdecoder/ 2>{log} \
-            && mv {config[assembly_prefix]}_trinity.fasta.transdecoder.* results/transdecoder/
+            && mv {config[assembly_prefix]}.Trinity.fasta.transdecoder.* results/transdecoder/
         """
