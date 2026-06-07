@@ -23,9 +23,9 @@ def get_fastq(wildcards):
 
 # Assembly output file paths derived from config assembly_prefix
 _prefix = config["assembly_prefix"]
-TRINITY_FASTA = f"results/trinity/{_prefix}.Trinity.fasta"
-TRINITY_MAP = f"results/trinity/{_prefix}.Trinity.fasta.gene_trans_map"
-TRANSDECODER_PEP = f"results/transdecoder/{_prefix}.Trinity.fasta.transdecoder.pep"
-TRANSDECODER_CDS = f"results/transdecoder/{_prefix}.Trinity.fasta.transdecoder.cds"
-TRANSDECODER_GFF3 = f"results/transdecoder/{_prefix}.Trinity.fasta.transdecoder.gff3"
-SEQKIT_SPLIT_FASTA = f"results/seqkit_split/{_prefix}.Trinity.part_{{part}}.fasta"
+TRINITY_FASTA = f"results/trinity/trinity_{_prefix}.Trinity.fasta"
+TRINITY_MAP = f"results/trinity/trinity_{_prefix}.Trinity.fasta.gene_trans_map"
+TRANSDECODER_PEP = f"results/transdecoder/trinity_{_prefix}.Trinity.fasta.transdecoder.pep"
+TRANSDECODER_CDS = f"results/transdecoder/trinity_{_prefix}.Trinity.fasta.transdecoder.cds"
+TRANSDECODER_GFF3 = f"results/transdecoder/trinity_{_prefix}.Trinity.fasta.transdecoder.gff3"
+SEQKIT_SPLIT_FASTA = f"results/seqkit_split/trinity_{_prefix}.Trinity.part_{{part}}.fasta"
