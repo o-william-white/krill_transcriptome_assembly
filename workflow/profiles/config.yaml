@@ -2,7 +2,7 @@ executor: slurm
 jobs: 40
 use-conda: true
 use-apptainer: true
-apptainer-args: "-B /mnt/shared/scratch --pwd /mnt/shared/scratch/owhite/private/krill_transcriptome_assembly"
+apptainer-args: "-B /mnt/shared/scratch --pwd /mnt/shared/scratch/owhite/private/krill_transcriptome_assembly_Esup"
 rerun-incomplete: true
 printshellcmds: true 
 
@@ -28,7 +28,9 @@ set-threads:
 
 set-resources:
     sortmerna:
-        mem: "12G"
+        mem: "100G" # had to increase all for a small number of jobs
+        slurm_partition: "himem" 
+        runtime: "24h"           
     cat_reads:
         mem: "100G"
     bbnorm:
@@ -37,11 +39,11 @@ set-resources:
         slurm_partition: "himem"
         cpus_per_task: 32
     trinity:
-        mem: "1000G"
+        mem: "250G"
         runtime: "168h"
         slurm_partition: "himem"
         cpus_per_task: 32
-    bwa_mem:
+    salmon_index:
         mem: "100G"
         cpus_per_task: 32
     busco:
