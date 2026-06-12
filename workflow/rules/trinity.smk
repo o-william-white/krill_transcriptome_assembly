@@ -15,7 +15,7 @@ rule trinity:
     shell:
         """
         Trinity \
-            --max_memory 900G \
+            --max_memory 200G \
             --seqType fq \
             --left {input.fwd} \
             --right {input.rev} \

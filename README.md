@@ -15,5 +15,17 @@ Build rule graph
 snakemake --profile workflow/profiles/ --rulegraph | dot -Tsvg > rulegraph.svg
 ```
 
+Change apptainer args for pwd bind path
+See `workflow/profiles/config.yaml`
+
+See scripts to run pipeline: 
+```
+run_transcriptome_assembly_Ecry.sh
+run_transcriptome_assembly_Esup.sh
+```
+
 To do
 - Write sormerna idx output to results dir rather than working dir.
+- Change Trinity rule to automatically detect PWD for bind path.
+- Set up generic config profile. 
+
