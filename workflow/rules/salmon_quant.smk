@@ -9,8 +9,6 @@ rule salmon_quant:
             "index.refinfo",
             "index.ssi",
             "index.ssi.mphf",
-            "index.tct",
-            "index.tdct",
             "info.json",
             "refseq.bin",
             "refseq_offsets.json",
