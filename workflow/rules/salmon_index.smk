@@ -4,24 +4,22 @@ rule salmon_index:
     output:
         multiext(
             "results/salmon_index/",
-            "complete_ref_lens.bin",
-            "ctable.bin",
-            "ctg_offsets.bin",
             "duplicate_clusters.tsv",
+            "index.ctab",
+            "index.ectab",
+            "index.refinfo",
+            "index.ssi",
+            "index.ssi.mphf",
+            "index.tct",
+            "index.tdct",
             "info.json",
-            "pre_indexing.log",
-            "refAccumLengths.bin",
-            "ref_indexing.log",
-            "reflengths.bin",
             "refseq.bin",
-            "sshash.bin",
-            "versionInfo.json",
+            "refseq_offsets.json",
         ),
-        directory("results/salmon_index"),
+        directory("results/salmon_index"), # need to specifiy output direcotry here so it can be picked up by salmon quant
     log:
         "logs/salmon/salmon_index.log",
-    params:
-        # optional parameters
-        extra="",
-    wrapper:
-        "v9.4.1/bio/salmon/index"
+    conda:
+        "../envs/salmon.yaml"
+    shell:
+        "salmon index -t {input.sequences} -i results/salmon_index > {log} 2>&1"

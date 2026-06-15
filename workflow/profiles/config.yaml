@@ -16,7 +16,7 @@ default-resources:
 set-threads:
     bbnorm: 32
     trinity: 32
-    bwa_mem: 32
+    salmon_index: 32
     busco: 16
     transrate: 16
     diamond_blastp: 32
