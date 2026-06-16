@@ -17,6 +17,7 @@ set-threads:
     bbnorm: 32
     trinity: 32
     salmon_index: 32
+    salmon_quant: 32
     busco: 16
     transrate: 16
     diamond_blastp: 32
@@ -44,6 +45,9 @@ set-resources:
         slurm_partition: "himem"
         cpus_per_task: 32
     salmon_index:
+        mem: "100G"
+        cpus_per_task: 32
+    salmon_quant:
         mem: "100G"
         cpus_per_task: 32
     busco:
