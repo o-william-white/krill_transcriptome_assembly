@@ -2,7 +2,7 @@ executor: slurm
 jobs: 40
 use-conda: true
 use-apptainer: true
-apptainer-args: "-B /mnt/shared/scratch --pwd /mnt/shared/scratch/owhite/private/krill_transcriptome_assembly_Esup"
+apptainer-args: "-B /mnt/shared/scratch --pwd /mnt/shared/scratch/owhite/private/krill_transcriptome_assembly_Ecry"
 rerun-incomplete: true
 printshellcmds: true 
 
