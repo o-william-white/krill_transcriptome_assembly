@@ -20,8 +20,16 @@ See `workflow/profiles/config.yaml`
 
 See scripts to run pipeline: 
 ```
-run_transcriptome_assembly_Ecry.sh
 run_transcriptome_assembly_Esup.sh
+```
+
+Clean up files
+```
+rm -f pipeliner.*
+rm -fr TMHMM_*
+rm -fr sshash_tmp/
+rm -fr emappertmp_dmdn_*
+rm -fr .snakemake/
 ```
 
 To do

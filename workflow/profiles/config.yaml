@@ -91,4 +91,7 @@ set-resources:
         runtime: "168h"
         slurm_partition: "long"
         cpus_per_task: 16
-
+    trinotate_load_and_report:
+        mem: "10G"
+        runtime: "24h"
+        slurm_partition: "medium"

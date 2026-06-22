@@ -5,3 +5,7 @@
 logs/
 resources/
 results/
+idx/
+
+# job log files
+job_run_transcriptome_assembly_*
