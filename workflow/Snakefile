@@ -13,13 +13,20 @@ include: "rules/trinity.smk"
 include: "rules/salmon_index.smk"
 include: "rules/salmon_quant.smk"
 include: "rules/busco.smk"
+include: "rules/seqkit_stats_transcripts.smk"
+include: "rules/taxdump.smk"
+include: "rules/blobtools_create.smk"
+include: "rules/blobtools_filter.smk"
+include: "rules/plot_transcript_summary_blobtools.smk"
 include: "rules/transdecoder_longorfs.smk"
 include: "rules/pfam_db.smk"
 include: "rules/hmmpress.smk"
 include: "rules/pfam.smk"
 include: "rules/swissprot_db.smk"
+include: "rules/swissprot_accession_taxonomy.smk"
 include: "rules/diamond_makedb.smk"
 include: "rules/diamond_blastp.smk"
+include: "rules/blast_with_taxid.smk"
 include: "rules/transdecoder_predict.smk"
 include: "rules/diamond_blastx.smk"
 include: "rules/tmhmm.smk"
@@ -34,4 +41,5 @@ include: "rules/trinotate.smk"
 rule all:
     input:
         "results/multiqc.html",
+        "results/cat_reads/seqkit_stats.tsv",
         "results/trinotate/trinotate_report.tsv",

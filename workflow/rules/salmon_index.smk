@@ -14,7 +14,7 @@ rule salmon_index:
             "refseq.bin",
             "refseq_offsets.json",
         ),
-        directory("results/salmon_index"), # need to specifiy output direcotry here so it can be picked up by salmon quant
+        directory("results/salmon_index"),  # need to specifiy output direcotry here so it can be picked up by salmon quant
     log:
         "logs/salmon/salmon_index.log",
     conda:

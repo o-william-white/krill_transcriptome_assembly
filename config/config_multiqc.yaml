@@ -15,3 +15,18 @@ fastp:
   s_name_filenames: true
 
 show_analysis_paths: false
+
+# Hide columns from general statistics table
+table_columns_visible:
+  BUSCO:
+    complete: false
+    complete_single_copy: false
+    complete_duplicated: false
+    fragmented: false
+    missing: false
+  salmon:
+    percent_mapped: false
+    num_mapped: false
+    compatible_fragment_ratio: false
+    strand_mapping_bias: false
+

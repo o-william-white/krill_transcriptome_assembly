@@ -33,5 +33,5 @@ rule salmon_quant:
             -1 {input.r1} \
             -2 {input.r2} \
             -p {threads} \
-            -o results/salmon > {log} 2>&1
+            -o results/salmon >{log} 2>&1
         """
