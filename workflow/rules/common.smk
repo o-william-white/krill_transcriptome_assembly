@@ -25,7 +25,15 @@ def get_fastq(wildcards):
 _prefix = config["assembly_prefix"]
 TRINITY_FASTA = f"results/trinity/trinity_{_prefix}.Trinity.fasta"
 TRINITY_MAP = f"results/trinity/trinity_{_prefix}.Trinity.fasta.gene_trans_map"
-TRANSDECODER_PEP = f"results/transdecoder/trinity_{_prefix}.Trinity.fasta.transdecoder.pep"
-TRANSDECODER_CDS = f"results/transdecoder/trinity_{_prefix}.Trinity.fasta.transdecoder.cds"
-TRANSDECODER_GFF3 = f"results/transdecoder/trinity_{_prefix}.Trinity.fasta.transdecoder.gff3"
-SEQKIT_SPLIT_FASTA = f"results/seqkit_split/trinity_{_prefix}.Trinity.part_{{part}}.fasta"
+TRANSDECODER_PEP = (
+    f"results/transdecoder/trinity_{_prefix}.Trinity.fasta.transdecoder.pep"
+)
+TRANSDECODER_CDS = (
+    f"results/transdecoder/trinity_{_prefix}.Trinity.fasta.transdecoder.cds"
+)
+TRANSDECODER_GFF3 = (
+    f"results/transdecoder/trinity_{_prefix}.Trinity.fasta.transdecoder.gff3"
+)
+SEQKIT_SPLIT_FASTA = (
+    f"results/seqkit_split/trinity_{_prefix}.Trinity.part_{{part}}.fasta"
+)

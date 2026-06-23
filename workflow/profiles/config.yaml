@@ -95,4 +95,6 @@ set-resources:
         mem: "10G"
         runtime: "24h"
         slurm_partition: "medium"
+    blobtools_create:
+        mem: "20G"
 
